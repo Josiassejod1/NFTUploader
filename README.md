@@ -13,3 +13,9 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+This project creates a basic NFT that is uploaded to the Opensea TestNet
+
+This was the result !
+
+https://testnets.opensea.io/collection/nftitem-ikysz9qrp9
