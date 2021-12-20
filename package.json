@@ -3,6 +3,8 @@
     "@nomiclabs/hardhat-ethers": "^2.0.3",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "chai": "^4.3.4",
+    "esbuild": "^0.14.6",
+    "esbuild-register": "^3.2.1",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.2",
     "hardhat": "^2.8.0"
@@ -10,5 +12,13 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.1",
     "dotenv": "^10.0.0"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "es": "node -r esbuild-register",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
   }
 }
